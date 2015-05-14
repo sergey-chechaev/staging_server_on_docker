@@ -1,0 +1,5 @@
+db:
+  image: xco/db
+  environment:
+    - MYSQL_ROOT_PASSWORD=12345678
+  # command: bash -l -c "/tmp/create_database.sh"

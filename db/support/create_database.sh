@@ -1,0 +1,1 @@
+mysql --user=root --password=12345678 -e 'CREATE DATABASE sprut CHARACTER SET utf8 COLLATE utf8_general_ci'

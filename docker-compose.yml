@@ -1,0 +1,56 @@
+
+# 
+# How to run 
+# 
+# All:        docker-compose up
+# Single:     docker-compose run --service-ports rails1
+#             docker-compose stop rails1
+# 
+
+# 
+# Strategy
+# 
+# 1. Setup config: docker-compose up
+# 2. Update database: run database script
+# 3. Start unicorn and sidekiq
+
+# 
+# XCO Project changes
+# 
+# database.yml
+# searchkick.rb
+# redis.rb
+# snapstats.rb
+# 
+
+rails1:
+  volumes:
+    - /Users/kofee/Docker/rails:/rails
+  ports:
+    - "3000:8081"
+  links:
+    - es1
+    - db1
+    - redis1
+  extends:
+    file: rails/docker-compose.yml
+    service: rails
+
+es1:
+  volumes:
+    - /Users/kofee/Docker/es:/es_data
+  extends:
+    file: es/docker-compose.yml
+    service: es
+
+db1:
+  volumes:
+    - /Users/kofee/Docker/db:/db_dump
+  extends:
+    file: db/docker-compose.yml
+    service: db
+
+redis1:
+  extends:
+    file: redis/docker-compose.yml
+    service: redis

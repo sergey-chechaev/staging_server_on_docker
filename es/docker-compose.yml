@@ -1,0 +1,7 @@
+es:
+  image: xco/es
+  # ports:
+    # - "9200:9200"
+# extends:
+#   file: ../shared/ash.yml
+#   service: es

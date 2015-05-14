@@ -1,0 +1,144 @@
+
+source 'https://rubygems.org'
+
+ruby '2.1.0'
+
+gem 'rails', '4.0.2'
+gem 'execjs'
+gem 'therubyracer'
+
+# gem 'thin'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+gem 'sqlite3'
+gem 'mysql2', '>=0.3'
+gem 'sunspot_rails'
+gem 'snapstats'
+
+# gem 'sunspot_solr'
+gem 'snapstats'
+
+# gem "highcharts-rails", "~> 3.0.0"
+
+gem 'font-awesome-rails', '~> 4.1.0.0'
+
+gem 'searchkick', '0.5.0'
+# gem 'elasticsearch'
+
+gem 'ransack'
+
+gem 'text'
+gem "damerau-levenshtein", '1.0.3'
+
+gem 'resque', :require => "resque/server"
+gem 'resque-scheduler'
+
+gem 'sidekiq', '~> 3.2.6'
+gem 'redis', '~> 3.1.0'
+gem 'sinatra', require: false
+gem 'whenever', '~> 0.9.4'
+gem 'capistrano-sidekiq', group: :development
+
+gem 'rest-client', '1.6.7'
+
+gem 'simple_form'
+gem 'formtastic-bootstrap'
+gem 'formtastic', '~> 2.2'
+gem 'progress_bar', '0.3.4'
+gem "roo", "~> 1.11.2"
+gem 'rubyzip', '< 1.0.0'
+
+gem 'os'
+gem 'devise'
+gem 'devise_security_extension'
+gem 'devise-i18n'
+gem 'cancan'
+
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+
+gem 'spreadsheet'
+
+gem 'wash_out', '0.9.0'
+gem 'savon'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', :platforms => :ruby
+
+  gem 'uglifier', '>= 1.0.3'
+end
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+gem 'nokogiri'
+gem 'nokogiri-pretty'
+gem 'russian'
+gem 'paperclip'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'capybara-webkit'
+  gem 'ci_reporter'
+  gem 'faker'
+end
+
+
+gem 'unicode'
+gem 'addressable', '~> 2.3.6'
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Use unicorn as the app server
+gem 'unicorn'
+
+# Deploy with Capistrano
+gem 'capistrano', "2.15.5"
+
+# gem 'ruby-progressbar'
+
+gem 'will_paginate', '~> 3.0.0'
+
+# To use debugger
+# gem 'debugger'
+
+# gem 'ar-octopus'
+
+gem "sentry-raven"
+gem 'virtus'
+
+# gem for rails 4
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
+gem 'activerecord-deprecated_finders'
+
+# for comment migration
+
+gem "migration_comments" 
+# gem "non-stupid-digest-assets"
+
+gem 'paper_trail', '~> 3.0.0'
+gem 'attr_encrypted'
+
+
