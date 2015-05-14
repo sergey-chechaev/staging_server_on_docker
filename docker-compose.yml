@@ -23,34 +23,41 @@
 # snapstats.rb
 # 
 
-rails1:
+# Docker
+# http://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574
+
+# Restart
+# docker kill `docker ps --no-trunc -aq` && docker rm `docker ps --no-trunc -aq`
+
+
+rails:
   volumes:
     - /Users/kofee/Docker/rails:/rails
   ports:
     - "3000:8081"
   links:
-    - es1
-    - db1
-    - redis1
+    - es
+    - db
+    - redis
   extends:
     file: rails/docker-compose.yml
     service: rails
 
-es1:
+es:
   volumes:
     - /Users/kofee/Docker/es:/es_data
   extends:
     file: es/docker-compose.yml
     service: es
 
-db1:
+db:
   volumes:
     - /Users/kofee/Docker/db:/db_dump
   extends:
     file: db/docker-compose.yml
     service: db
 
-redis1:
+redis:
   extends:
     file: redis/docker-compose.yml
     service: redis

@@ -4,5 +4,5 @@ then
 else
 	dump_name="dump.sql"
 fi
-mysql -u root sprut < $dump_name
+mysql -u root -p12345678 sprut < $dump_name
 echo "Import finished..."
