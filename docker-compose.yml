@@ -51,7 +51,7 @@ rails:
     - redis
   environment:
     - DOCKER_REDIS=redis
-    - DOCER_ES=http://es:9200
+    - DOKCER_ES=http://es:9200
     - DOCKER_DB_HOST=db
     - DOCKER_DB_USER=root
     - DOCKER_DB_PASS=12345678
