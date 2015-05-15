@@ -3,7 +3,7 @@
 # How to run 
 # 
 # All:        docker-compose up
-# Single:     docker-compose run --service-ports rails1
+# Single:     docker-compose run --service-ports rails
 #             docker-compose stop rails1
 # 
 
@@ -23,6 +23,16 @@
 # snapstats.rb
 # 
 
+# 
+# ENV VARIABLES
+# 
+
+# DOCKER_REDIS = address
+# DOCER_ES = http://es:9200
+# DOCKER_DB_HOST = db1
+# DOCKER_DB_USER = root
+# DOCKER_DB_PASS = '12345678'
+
 # Docker
 # http://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574
 
@@ -39,6 +49,12 @@ rails:
     - es
     - db
     - redis
+  environment:
+    - DOCKER_REDIS=redis
+    - DOCER_ES=http://es:9200
+    - DOCKER_DB_HOST=db
+    - DOCKER_DB_USER=root
+    - DOCKER_DB_PASS=12345678
   extends:
     file: rails/docker-compose.yml
     service: rails
