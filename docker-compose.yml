@@ -1,27 +1,27 @@
 
-# 
-# How to run 
-# 
+#
+# How to run
+#
 # All:        docker-compose up
 # Single:     docker-compose run --service-ports rails1
 #             docker-compose stop rails1
-# 
+#
 
-# 
+#
 # Strategy
-# 
+#
 # 1. Setup config: docker-compose up
 # 2. Update database: run database script
 # 3. Start unicorn and sidekiq
 
-# 
+#
 # XCO Project changes
-# 
+#
 # database.yml
 # searchkick.rb
 # redis.rb
 # snapstats.rb
-# 
+#
 
 # Docker
 # http://code.tutsplus.com/tutorials/quick-tip-how-to-work-with-github-and-multiple-accounts--net-22574
@@ -32,27 +32,33 @@
 
 rails:
   volumes:
-    - /Users/kofee/Docker/rails:/rails
+    - /home/chechaev/Docker/rails/rails
   ports:
     - "3000:8081"
   links:
     - es
     - db
     - redis
+  environment:
+    - DOCKER_REDIS=redis
+    - DOCER_ES=http://es:9200
+    - DOCKER_DB_HOST=db
+    - DOCKER_DB_USER=root
+    - DOCKER_DB_PASS=12345678
   extends:
     file: rails/docker-compose.yml
     service: rails
 
 es:
   volumes:
-    - /Users/kofee/Docker/es:/es_data
+    - /home/chechaev/Docker/es:/es_data
   extends:
     file: es/docker-compose.yml
     service: es
 
 db:
   volumes:
-    - /Users/kofee/Docker/db:/db_dump
+    - /home/chechaev/Docker/db:/db_dump
   extends:
     file: db/docker-compose.yml
     service: db
