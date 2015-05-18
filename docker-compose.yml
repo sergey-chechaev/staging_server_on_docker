@@ -61,16 +61,21 @@ rails:
     file: rails/docker-compose.yml
     service: rails
 
-sidekiq:
-  environment:
-    - RAILS_ENV=docker
-  links:
-    - es
-    - db
-    - redis
-  extends:
-    file: rails/docker-compose.yml
-    service: sidekiq
+# sidekiq:
+#   environment:
+#     - RAILS_ENV=docker
+#     - DOCKER_REDIS=redis
+#     - DOCKER_ES=http://es:9200
+#     - DOCKER_DB_HOST=db
+#     - DOCKER_DB_USER=root
+#     - DOCKER_DB_PASS=12345678
+#   links:
+#     - es
+#     - db
+#     - redis
+#   extends:
+#     file: rails/docker-compose.yml
+#     service: sidekiq
 
 es:
   volumes:

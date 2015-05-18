@@ -8,5 +8,5 @@ rails:
   # command: /bin/bash -l -c "ping -c 1 db1"
 
 sidekiq:
-	image: xco/rails
-	command: /bin/bash -l -c "bundle exec sidekiq -c 25"
+  image: xco/rails
+  command: /bin/bash -l -c "bundle exec sidekiq -c25"
