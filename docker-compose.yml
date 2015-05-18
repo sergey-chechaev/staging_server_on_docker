@@ -41,7 +41,6 @@
 
 
 rails:
-  command: /bin/bash -l -c "bundle exec unicorn -p 8081 -E docker -c config/unicorn_docker.rb"
   volumes:
     - /Users/kofee/Docker/rails:/rails
   ports:
@@ -60,22 +59,6 @@ rails:
   extends:
     file: rails/docker-compose.yml
     service: rails
-
-# sidekiq:
-#   environment:
-#     - RAILS_ENV=docker
-#     - DOCKER_REDIS=redis
-#     - DOCKER_ES=http://es:9200
-#     - DOCKER_DB_HOST=db
-#     - DOCKER_DB_USER=root
-#     - DOCKER_DB_PASS=12345678
-#   links:
-#     - es
-#     - db
-#     - redis
-#   extends:
-#     file: rails/docker-compose.yml
-#     service: sidekiq
 
 es:
   volumes:
