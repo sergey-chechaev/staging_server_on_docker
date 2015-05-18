@@ -64,6 +64,10 @@ rails:
 sidekiq:
   environment:
     - RAILS_ENV=docker
+  links:
+    - es
+    - db
+    - redis
   extends:
     file: rails/docker-compose.yml
     service: sidekiq
