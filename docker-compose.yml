@@ -32,16 +32,17 @@
 
 rails:
   volumes:
-    - /home/chechaev/Docker/rails/rails
+    - /home/chechaev/Docker/rails/current:/rails
   ports:
-    - "3000:8081"
+    - "3001:8081"
   links:
     - es
     - db
     - redis
   environment:
+    - RAILS_ENV=docker
     - DOCKER_REDIS=redis
-    - DOCER_ES=http://es:9200
+    - DOCKER_ES=http://es:9200
     - DOCKER_DB_HOST=db
     - DOCKER_DB_USER=root
     - DOCKER_DB_PASS=12345678
@@ -59,6 +60,8 @@ es:
 db:
   volumes:
     - /home/chechaev/Docker/db:/db_dump
+  ports:
+    - "33007:3306"
   extends:
     file: db/docker-compose.yml
     service: db
