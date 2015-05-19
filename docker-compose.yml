@@ -63,6 +63,7 @@ rails:
 es:
   volumes:
     - /Users/kofee/Docker/es:/es_data
+    - /Users/kofee/Docker/es:/var/lib/mysql
   extends:
     file: es/docker-compose.yml
     service: es
