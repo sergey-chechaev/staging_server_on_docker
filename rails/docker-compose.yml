@@ -1,4 +1,4 @@
 rails:
   image: xco/rails
   command: /bin/bash -l -c "bundle exec unicorn -p 8081 -E docker -c config/unicorn_docker.rb"
-  command: /bin/bash -l -c "bundle exec sidekiq -c 25 -C config/sidekiq.yml -e docker"
+  # command: /bin/bash -l -c "bundle exec sidekiq -c 25 -C config/sidekiq.yml -e docker"
